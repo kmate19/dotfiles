@@ -47,6 +47,7 @@ zstyle ':completion:*' menu select
 
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
+bindkey "§" autosuggest-accept
 
 alias cd=z
 alias v=nvim
