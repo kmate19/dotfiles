@@ -1,14 +1,14 @@
 source ~/.zplug/init.zsh
 
+autoload -U compinit; compinit
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-XDG_CONFIG_HOME=$HOME/.config
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias l='ls -lh --color=auto'
-alias ll='ls -lAh --color=auto'
-alias ls='ls --color=auto'
+XDG_CONFIG_HOME=$HOME/.config
 
 [[ ! -f $XDG_CONFIG_HOME/.p10k.zsh ]] || source $XDG_CONFIG_HOME/.p10k.zsh
 # bun
@@ -39,9 +39,13 @@ setopt hist_verify
 setopt autocd
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' menu no
-bindkey "^[[A" history-search-backward
+zstyle ':completion:*' verbose yes 
+zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' file-list all
+zstyle ':completion:*' file-sort date
+zstyle ':completion:*' menu select 
 
+bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
 alias cd=z
@@ -51,12 +55,14 @@ alias c=clear
 alias cat=bat
 alias rm=trash
 alias "yabaidog"="rm -rf /tmp/yabai* & yabai --restart-service"
+alias l='ls -lht --color=auto'
+alias ll='ls -lAht --color=auto'
+alias ls='ls -t --color=auto'
 
 eval "$(zoxide init zsh)"
 # eval "$(fzf)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 if ! zplug check --verbose; then
         echo; zplug install
