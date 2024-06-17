@@ -1,0 +1,15 @@
+[env]
+TERM = "xterm-256color"
+COLORTERM = "truecolor"
+[window]
+padding = { x = 5, y = 5 }
+decorations = "full"
+opacity = 0.8
+[font]
+normal = { family = "JetBrainsMono Nerd Font Mono", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font Mono", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font Mono", style = "Bold Italic" }
+size = 17
+[mouse]
+hide_when_typing = true
