@@ -14,9 +14,14 @@ XDG_CONFIG_HOME=$HOME/.config
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 # bun completions
 [ -s "/Users/matekiss/.bun/_bun" ] && source "/Users/matekiss/.bun/_bun"
+
+# api keys
+export GROQ_API_KEY_1=$(<groq_api.api)
+
+# brew
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
 zplug zsh-users/zsh-syntax-highlighting, defer:2
 zplug zsh-users/zsh-autosuggestions
