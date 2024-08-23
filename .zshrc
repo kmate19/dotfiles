@@ -18,7 +18,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/Users/matekiss/.bun/_bun" ] && source "/Users/matekiss/.bun/_bun"
 
 # api keys
-export GROQ_API_KEY_1=$(<groq_api.api)
+export GROQ_API_KEY_1=$(<$HOME/.apikeys/groq_api.api)
 
 # brew
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
