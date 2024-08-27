@@ -111,6 +111,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # api keys
 export GROQ_API_KEY_1=$(<$HOME/.apikeys/groq_api.api)
+export CUSTOM_PACKAGES=(zsh thefuck rustup ripgrep fd make nodejs npm python btop fastfetch neovim bat zoxide trash-cli git bat tmux fzf gcc)
 
 
 HISTFILE=$HOME/.zsh_history
