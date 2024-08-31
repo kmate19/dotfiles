@@ -5,7 +5,7 @@ show_ram() { # This function name must match the module name!
 
   icon="$(  get_tmux_option "@catppuccin_ram_icon"  "ram"           )"
   color="$( get_tmux_option "@catppuccin_ram_color" "$thm_orange" )"
-  text="$(  get_tmux_option "@catppuccin_ram_text"  "#(~/dotfiles/.scripts/tmux/get_ram.sh)" )"
+  text="$(  get_tmux_option "@catppuccin_ram_text"  "#(~/dotfiles/scripts/tmux/get_ram.sh)" )"
 
   module=$( build_status_module "$index" "$icon" "$color" "$text" )
 

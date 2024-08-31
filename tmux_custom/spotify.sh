@@ -5,7 +5,7 @@ show_spotify() { # This function name must match the module name!
 
   icon="$(  get_tmux_option "@catppuccin_spotify_icon"  "♫"           )"
   color="$( get_tmux_option "@catppuccin_spotify_color" "$thm_green" )"
-  text="$(  get_tmux_option "@catppuccin_spotify_text"  "#(~/dotfiles/.scripts/tmux/get_spotify.sh)" )"
+  text="$(  get_tmux_option "@catppuccin_spotify_text"  "#(~/dotfiles/scripts/tmux/get_spotify.sh)" )"
 
   module=$( build_status_module "$index" "$icon" "$color" "$text" )
 
