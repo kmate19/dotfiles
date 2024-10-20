@@ -8,7 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="crunch"
+ZSH_THEME="lambda"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -110,7 +111,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/Users/matekiss/.bun/_bun" ] && source "/Users/matekiss/.bun/_bun"
 
 # api keys
-export GROQ_API_KEY_1=$(<$HOME/.apikeys/groq_api.api)
 export CUSTOM_PACKAGES=(zsh thefuck rustup ripgrep fd make nodejs npm python btop fastfetch neovim bat zoxide trash-cli git bat tmux fzf gcc)
 
 
