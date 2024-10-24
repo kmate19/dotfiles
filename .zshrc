@@ -146,6 +146,7 @@ alias g=git
 alias c=clear
 alias cat=bat
 alias rm=trash
+alias neovide=neovide.exe --wsl
 alias "yabaidog"="rm -rf /tmp/yabai* & yabai --restart-service"
 
 eval "$(zoxide init zsh)"
