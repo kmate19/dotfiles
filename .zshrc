@@ -141,12 +141,11 @@ bindkey "^[[B" history-search-forward
 bindkey "§" autosuggest-accept
 
 alias cd=z
-alias v="nvim ."
 alias g=git
-alias c=clear
 alias cat=bat
 alias rm=trash
 alias "nvim_invalidate"="rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.local/state/nvim"
+alias "vimconf"="cd $HOME/.config/nvim && nvim ."
 alias "neovide"="neovide.exe --wsl"
 alias "yabaidog"="rm -rf /tmp/yabai* & yabai --restart-service"
 
