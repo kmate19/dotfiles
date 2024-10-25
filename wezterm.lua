@@ -13,7 +13,7 @@ elseif wezterm.target_triple:find("linux") ~= nil then
 	config.font_size = 11
 end
 
-config.color_scheme = "Poimandres"
+config.color_scheme = "Rose Pine Dawn"
 -- config.font = wezterm.font("Inconsolata")
 config.window_background_opacity = 0.7
 config.audible_bell = "Disabled"
