@@ -144,9 +144,16 @@ alias cd=z
 alias g=git
 alias cat=bat
 alias rm=trash
-alias "nvim_invalidate"="rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.local/state/nvim"
-alias "vimconf"="cd $HOME/.config/nvim && nvim ."
+alias "nvim_invalidate"="rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.local/state/nvim/lazy"
 alias "neovide"="neovide.exe --wsl"
 alias "yabaidog"="rm -rf /tmp/yabai* & yabai --restart-service"
 
 eval "$(zoxide init zsh)"
+
+# pnpm
+export PNPM_HOME="/home/mate/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
