@@ -7,8 +7,7 @@ if wezterm.target_triple:find("windows") ~= nil then
 	-- config.win32_system_backdrop = "Acrylic"
 	config.font_size = 11
 elseif wezterm.target_triple:find("darwin") ~= nil then
-	config.macos_window_background_blur = 20
-	config.font_size = 14
+	config.font_size = 16
 elseif wezterm.target_triple:find("linux") ~= nil then
 	config.font_size = 11
 end
