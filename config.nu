@@ -899,3 +899,6 @@ $env.config = {
 
 source ~/.zoxide.nu
 use ~/.cache/starship/init.nu
+
+alias l = ls -a
+alias cd = z
