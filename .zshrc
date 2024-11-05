@@ -27,10 +27,7 @@
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time Uncomment the following line to change how often to auto-update (in days). zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -150,14 +147,6 @@ export XDG_CONFIG_HOME=$HOME/.config/
 # alias "yabaidog"="rm -rf /tmp/yabai* & yabai --restart-service"
 #
 # eval "$(zoxide init zsh)"
-
-# pnpm
-export PNPM_HOME="/home/mate/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 # use nushell while inheriting the current environment
 exec nu
