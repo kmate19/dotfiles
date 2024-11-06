@@ -922,7 +922,7 @@ use ~/.cache/starship/init.nu
 
 alias l = ls -a
 alias cd = z
-
+alias cat = bat
 
 
 # custom banner not used btw
