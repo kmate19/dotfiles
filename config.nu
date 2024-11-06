@@ -146,6 +146,10 @@ let light_theme = {
 # }
 
 # The default config record. This is where much of your global configuration is setup.
+
+# wezterm fix
+let osc133mode = if $env.TERM_PROGRAM == "WezTerm" { false } else { true }
+
 $env.config = {
     show_banner: true # true or false to enable or disable the welcome banner at startup
 
@@ -240,7 +244,7 @@ $env.config = {
     buffer_editor: null # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
-    edit_mode: emacs # emacs, vi
+    edit_mode: vi # emacs, vi
     shell_integration: {
         # osc2 abbreviates the path if in the home_dir, sets the tab/window title, shows the running command in the tab/window title
         osc2: true
@@ -256,7 +260,8 @@ $env.config = {
         # 133;C - Mark pre-execution
         # 133;D;exit - Mark execution finished with exit code
         # This is used to enable terminals to know where the prompt is, the command is, where the command finishes, and where the output of the command is
-        osc133: true
+        # osc133: true
+        osc133: $osc133mode
         # osc633 is closely related to osc133 but only exists in visual studio code (vscode) and supports their shell integration features
         # 633;A - Mark prompt start
         # 633;B - Mark prompt end

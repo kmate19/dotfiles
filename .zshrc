@@ -150,3 +150,4 @@ export XDG_CONFIG_HOME=$HOME/.config/
 
 # use nushell while inheriting the current environment
 exec nu
+
