@@ -4,12 +4,12 @@ local config = wezterm.config_builder()
 
 if wezterm.target_triple:find("windows") ~= nil then
 	-- config.win32_system_backdrop = "Acrylic"
-    config.default_domain = "WSL:Arch"
-	config.font_size = 11
+	config.default_domain = "WSL:Arch"
+	config.font_size = 15
 elseif wezterm.target_triple:find("darwin") ~= nil then
-	config.font_size = 16
+	config.font_size = 18
 elseif wezterm.target_triple:find("linux") ~= nil then
-	config.font_size = 11
+	config.font_size = 15
 end
 
 config.color_scheme = "catppuccin-mocha"
