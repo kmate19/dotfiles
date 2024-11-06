@@ -311,8 +311,7 @@ $env.config = {
                         return null
                     }
                     (
-                        $"(ansi $env.config.color_config.shape_external)($cmd_name)(ansi reset) " +
-                        $"may be found in the following packages:\n($pkgs)"
+                        print $"(ansi $env.config.color_config.shape_external)($cmd_name)(ansi reset) may be found in the following packages:\n($pkgs)"
                     )
                 }
             )
