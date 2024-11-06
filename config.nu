@@ -148,7 +148,10 @@ let light_theme = {
 # The default config record. This is where much of your global configuration is setup.
 
 # wezterm fix
-let osc133mode = if $env.TERM_PROGRAM == "WezTerm" { false } else { true }
+let osc133mode = try {
+  let asd = if $env.TERM_PROGRAM == "WezTerm" { false } else { true }
+  $asd
+} catch { true }
 
 $env.config = {
     show_banner: false # true or false to enable or disable the welcome banner at startup
@@ -182,7 +185,7 @@ $env.config = {
     display_errors: {
         exit_code: false # assume the external command prints an error message
         # Core dump errors are always printed, and SIGPIPE never triggers an error.
-        # The setting below controls message printing for termination by all other signals.
+        # The setting below controls message printing for termination by all other s
         termination_signal: true
     }
 
