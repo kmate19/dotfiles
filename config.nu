@@ -151,7 +151,7 @@ let light_theme = {
 let osc133mode = if $env.TERM_PROGRAM == "WezTerm" { false } else { true }
 
 $env.config = {
-    show_banner: true # true or false to enable or disable the welcome banner at startup
+    show_banner: false # true or false to enable or disable the welcome banner at startup
 
     ls: {
         use_ls_colors: true # use the LS_COLORS environment variable to colorize output
@@ -159,7 +159,7 @@ $env.config = {
     }
 
     rm: {
-        always_trash: false # always act as if -t was given. Can be overridden with -p
+        always_trash: true # always act as if -t was given. Can be overridden with -p
     }
 
     table: {
@@ -303,7 +303,20 @@ $env.config = {
             PWD: [{|before, after| null }] # run if the PWD environment is different since the last repl input
         }
         display_output: "if (term size).columns >= 100 { table -e } else { table }" # run to display the output of a pipeline
-        command_not_found: { null } # return an error message when a command is not found
+        command_not_found: { 
+            |cmd_name| (
+                try {
+                    let pkgs = (pkgfile --binaries --verbose $cmd_name)
+                    if ($pkgs | is-empty) {
+                        return null
+                    }
+                    (
+                        $"(ansi $env.config.color_config.shape_external)($cmd_name)(ansi reset) " +
+                        $"may be found in the following packages:\n($pkgs)"
+                    )
+                }
+            )
+        } # return an error message when a command is not found
     }
 
     menus: [
@@ -907,3 +920,23 @@ use ~/.cache/starship/init.nu
 
 alias l = ls -a
 alias cd = z
+
+
+
+# custom banner not used btw
+def banner [] {
+ let ellie = [
+        "     __  ,"
+        " .--()°'.'"
+        "'|, . ,'  "
+        ' !_-(_\   '
+    ]
+    let s_mem = (sys mem)
+    let s_ho = (sys host)
+    print $"(ansi reset)(ansi green)($ellie.0)"
+    print $"(ansi green)($ellie.1)  (ansi yellow) (ansi yellow_bold)Nushell (ansi reset)(ansi yellow)v(version | get version)(ansi reset)"
+    print $"(ansi green)($ellie.2)  (ansi light_purple_bold)($s_ho.name)(ansi reset)"
+    print $"(ansi green)($ellie.3)  (ansi purple)Startup time: ($nu.startup-time)(ansi reset)"
+}
+
+
