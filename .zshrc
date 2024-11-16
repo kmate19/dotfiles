@@ -9,7 +9,7 @@
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="crunch"
-# ZSH_THEME="dstufft"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,9 +68,9 @@
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git tmux fzf thefuck macos zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git tmux fzf macos zsh-autosuggestions zsh-syntax-highlighting)
 
-# source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
 
 # User configuration
 
@@ -105,49 +105,50 @@ fi
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 # bun completions
-# [ -s "/Users/matekiss/.bun/_bun" ] && source "/Users/matekiss/.bun/_bun"
+[ -s "/Users/matekiss/.bun/_bun" ] && source "/Users/matekiss/.bun/_bun"
 
 # api keys
 # export CUSTOM_PACKAGES=(zsh thefuck rustup ripgrep fd make nodejs npm python btop fastfetch neovim bat zoxide trash-cli git bat tmux fzf gcc)
 export XDG_CONFIG_HOME=$HOME/.config/
 
 
-# HISTFILE=$HOME/.zsh_history
-# SAVEHIST=1000
-# HISTSIZE=1000
-# HISTDUP=erase
-# setopt appendhistory
-# setopt share_history
-# setopt hist_ignore_space
-# setopt hist_expire_dups_first
-# setopt hist_ignore_all_dups
-# setopt hist_save_no_dups
-# setopt hist_ignore_dups
-# setopt hist_find_no_dups
-# setopt hist_verify
-# setopt autocd
+HISTFILE=$HOME/.zsh_history
+SAVEHIST=1000
+HISTSIZE=1000
+HISTDUP=erase
+setopt appendhistory
+setopt share_history
+setopt hist_ignore_space
+setopt hist_expire_dups_first
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+setopt hist_verify
+setopt autocd
 
-# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-# zstyle ':completion:*' verbose yes 
-# zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
-# zstyle ':completion:*' file-list all
-# zstyle ':completion:*' file-sort date
-# zstyle ':completion:*' menu select 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' verbose yes 
+zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' file-list all
+zstyle ':completion:*' file-sort date
+zstyle ':completion:*' menu select 
 
-# bindkey "^[[A" history-search-backward
-# bindkey "^[[B" history-search-forward
-# bindkey "§" autosuggest-accept
+bindkey "^[[A" history-search-backward
+bindkey "^[[B" history-search-forward
+bindkey "§" autosuggest-accept
 
-# alias cd=z
-# alias g=git
-# alias cat=bat
-# alias rm=trash
-# alias "nvim_invalidate"="rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.local/state/nvim/lazy"
-# alias "neovide"="neovide.exe --wsl"
-# alias "yabaidog"="rm -rf /tmp/yabai* & yabai --restart-service"
-#
-# eval "$(zoxide init zsh)"
+alias cd=z
+alias g=git
+alias cat=bat
+alias rm=trash
+alias "nvim_invalidate"="rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.local/state/nvim/lazy"
+alias "neovide"="neovide.exe --wsl"
+alias "yabaidog"="rm -rf /tmp/yabai* & yabai --restart-service"
 
+eval "$(zoxide init zsh)"
+
+eval "$(starship init zsh)"
 # use nushell while inheriting the current environment
-exec nu
+# exec nu
 
