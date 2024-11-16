@@ -3,7 +3,6 @@
 
 # Path to your Oh My Zsh installation.
 # export ZSH="$HOME/.oh-my-zsh"
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -141,7 +140,10 @@ bindkey "§" autosuggest-accept
 alias cd=z
 alias g=git
 alias cat=bat
+alias c=code
 alias rm=trash
+alias l="eza -lah --icons"
+alias ls="eza --icons"
 alias "nvim_invalidate"="rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.local/state/nvim/lazy"
 alias "neovide"="neovide.exe --wsl"
 alias "yabaidog"="rm -rf /tmp/yabai* & yabai --restart-service"
