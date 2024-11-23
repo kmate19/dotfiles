@@ -147,6 +147,8 @@ alias ls="eza --icons"
 alias "nvim_invalidate"="rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.local/state/nvim/lazy"
 alias "neovide"="neovide.exe --wsl"
 alias "yabaidog"="rm -rf /tmp/yabai* & yabai --restart-service"
+alias v="nvim"
+alias "vimconf"="nvim ~/.config/nvim/"
 
 eval "$(zoxide init zsh)"
 
