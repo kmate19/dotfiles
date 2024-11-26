@@ -4,11 +4,11 @@ local config = wezterm.config_builder()
 
 if wezterm.target_triple:find("windows") ~= nil then
 	config.default_domain = "WSL:Arch"
-	config.font_size = 14
+	config.font_size = 12
 elseif wezterm.target_triple:find("darwin") ~= nil then
-	config.font_size = 18
+	config.font_size = 17
 elseif wezterm.target_triple:find("linux") ~= nil then
-	config.font_size = 14
+	config.font_size = 12
 end
 
 config.enable_kitty_graphics = true
