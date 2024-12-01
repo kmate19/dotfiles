@@ -141,7 +141,6 @@ alias cd=z
 alias g=git
 alias cat=bat
 alias c=code
-alias rm=trash
 alias l="eza -lah --icons"
 alias ls="eza --icons"
 alias "nvim_invalidate"="rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.local/state/nvim/lazy"
