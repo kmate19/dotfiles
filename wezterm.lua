@@ -14,7 +14,7 @@ end
 config.enable_kitty_graphics = true
 config.max_fps = 120
 config.animation_fps = 120
-config.color_scheme = "Muse"
+config.color_scheme = "Oxocarbon Dark (Gogh)"
 config.audible_bell = "Disabled"
 
 return config
