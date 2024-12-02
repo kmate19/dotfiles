@@ -6,7 +6,9 @@ if status is-interactive
         set -Ux EDITOR nvim
     end
 
-    set -Ux XDG_CONFIG_HOME $HOME/.config/
+    set -U XDG_CONFIG_HOME $HOME/.config/
+    set -U BUN_INSTALL "$HOME/.bun"
+    set -gx PATH "$BUN_INSTALL/bin:$PATH"
     set -U fish_history_max 1000
     set -U fish_color_ls $LS_COLORS
 
