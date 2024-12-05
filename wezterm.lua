@@ -9,6 +9,8 @@ if wezterm.target_triple:find("windows") ~= nil then
 	config.window_background_opacity = 0.5
 elseif wezterm.target_triple:find("darwin") ~= nil then
 	config.font_size = 17
+	config.window_background_opacity = 0.5
+	config.macos_window_background_blur = 50
 elseif wezterm.target_triple:find("linux") ~= nil then
 	config.font_size = 12
 end
