@@ -67,91 +67,92 @@
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux fzf macos zsh-autosuggestions zsh-syntax-highlighting)
-
-source ~/.oh-my-zsh/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch $(uname -m)"
-
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
+# plugins=(git tmux fzf macos zsh-autosuggestions zsh-syntax-highlighting)
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-# bun completions
-[ -s "/Users/matekiss/.bun/_bun" ] && source "/Users/matekiss/.bun/_bun"
-
-# api keys
-# export CUSTOM_PACKAGES=(zsh thefuck rustup ripgrep fd make nodejs npm python btop fastfetch neovim bat zoxide trash-cli git bat tmux fzf gcc)
-export XDG_CONFIG_HOME=$HOME/.config/
-
-
-HISTFILE=$HOME/.zsh_history
-SAVEHIST=1000
-HISTSIZE=1000
-HISTDUP=erase
-setopt appendhistory
-setopt share_history
-setopt hist_ignore_space
-setopt hist_expire_dups_first
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
-setopt hist_verify
-setopt autocd
-
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' verbose yes 
-zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' file-list all
-zstyle ':completion:*' file-sort date
-zstyle ':completion:*' menu select 
-
-bindkey "^[[A" history-search-backward
-bindkey "^[[B" history-search-forward
-bindkey "§" autosuggest-accept
-
-alias cd=z
-alias g=git
-alias cat=bat
-alias c=code
-alias l="eza -lah --icons"
-alias ls="eza --icons"
-alias "nvim_invalidate"="rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.local/state/nvim/lazy"
-alias "neovide"="neovide.exe --wsl"
-alias "yabaidog"="rm -rf /tmp/yabai* & yabai --restart-service"
-alias v="nvim"
-alias "vimconf"="nvim ~/.config/nvim/"
-
-eval "$(zoxide init zsh)"
-
-eval "$(starship init zsh)"
+# source ~/.oh-my-zsh/oh-my-zsh.sh
+#
+# # User configuration
+#
+# # export MANPATH="/usr/local/man:$MANPATH"
+#
+# # You may need to manually set your language environment
+# # export LANG=en_US.UTF-8
+#
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
+#
+# # Compilation flags
+# # export ARCHFLAGS="-arch $(uname -m)"
+#
+# # Set personal aliases, overriding those provided by Oh My Zsh libs,
+# # plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# # users are encouraged to define aliases within a top-level file in
+# # the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# # - $ZSH_CUSTOM/aliases.zsh
+# # - $ZSH_CUSTOM/macos.zsh
+# # For a full list of active aliases, run `alias`.
+# #
+# # Example aliases
+# # alias zshconfig="mate ~/.zshrc"
+# # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+#
+# # bun
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
+# # bun completions
+# [ -s "/Users/matekiss/.bun/_bun" ] && source "/Users/matekiss/.bun/_bun"
+#
+# # api keys
+# # export CUSTOM_PACKAGES=(zsh thefuck rustup ripgrep fd make nodejs npm python btop fastfetch neovim bat zoxide trash-cli git bat tmux fzf gcc)
+# export XDG_CONFIG_HOME=$HOME/.config/
+#
+#
+# HISTFILE=$HOME/.zsh_history
+# SAVEHIST=1000
+# HISTSIZE=1000
+# HISTDUP=erase
+# setopt appendhistory
+# setopt share_history
+# setopt hist_ignore_space
+# setopt hist_expire_dups_first
+# setopt hist_ignore_all_dups
+# setopt hist_save_no_dups
+# setopt hist_ignore_dups
+# setopt hist_find_no_dups
+# setopt hist_verify
+# setopt autocd
+#
+# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# zstyle ':completion:*' verbose yes 
+# zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
+# zstyle ':completion:*' file-list all
+# zstyle ':completion:*' file-sort date
+# zstyle ':completion:*' menu select 
+#
+# bindkey "^[[A" history-search-backward
+# bindkey "^[[B" history-search-forward
+# bindkey "§" autosuggest-accept
+#
+# alias cd=z
+# alias g=git
+# alias cat=bat
+# alias c=code
+# alias l="eza -lah --icons"
+# alias ls="eza --icons"
+# alias "nvim_invalidate"="rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.local/state/nvim/lazy"
+# alias "neovide"="neovide.exe --wsl"
+# alias "yabaidog"="rm -rf /tmp/yabai* & yabai --restart-service"
+# alias v="nvim"
+# alias "vimconf"="nvim ~/.config/nvim/"
+#
+# eval "$(zoxide init zsh)"
+#
+# eval "$(starship init zsh)"
 # use nushell while inheriting the current environment
 # exec nu
-
+#
+exec fish
