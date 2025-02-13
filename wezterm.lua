@@ -5,6 +5,8 @@ local config = wezterm.config_builder()
 if wezterm.target_triple:find("windows") ~= nil then
 	config.default_domain = "WSL:Arch"
 	config.font_size = 12
+elseif wezterm.target_triple:find("darwin") then
+	config.font_size = 16
 end
 
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }

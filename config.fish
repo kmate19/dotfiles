@@ -9,13 +9,16 @@ if status is-interactive
     set -U XDG_CONFIG_HOME $HOME/.config/
     set -U BUN_INSTALL "$HOME/.bun"
     set -gx PATH "$BUN_INSTALL/bin:$PATH"
+    set -gx PATH "~/.cargo/bin:$PATH"
     set -U fish_history_max 1000
     set -U fish_color_ls $LS_COLORS
+    set -U fish_cursor_default block
 
     alias cd=z
     alias g=git
     alias cat=bat
     alias c=code
+    alias pn=pnpm
     alias l="eza -lah --icons"
     alias ls="eza --icons"
     alias nvim_invalidate="rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.local/state/nvim/lazy"
