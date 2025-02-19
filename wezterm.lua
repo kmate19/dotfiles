@@ -14,7 +14,7 @@ config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.enable_kitty_graphics = true
 config.max_fps = 120
 config.animation_fps = 120
-config.color_scheme = "zenwritter_dark"
+config.color_scheme = "Hardcore (Gogh)"
 config.audible_bell = "Disabled"
 
 return config
