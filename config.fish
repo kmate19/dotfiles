@@ -8,8 +8,11 @@ if status is-interactive
 
     set -U XDG_CONFIG_HOME $HOME/.config/
     set -U BUN_INSTALL "$HOME/.bun"
+    set -U PATH "$HOME/neovim/bin/nvim:$PATH"
+
     set -gx PATH "$BUN_INSTALL/bin:$PATH"
     set -gx PATH "~/.cargo/bin:$PATH"
+
     set -U fish_history_max 1000
     set -U fish_color_ls $LS_COLORS
     set -U fish_cursor_default block
