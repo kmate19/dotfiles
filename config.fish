@@ -9,8 +9,9 @@ if status is-interactive
     set -U XDG_CONFIG_HOME $HOME/.config/
     set -U BUN_INSTALL "$HOME/.bun"
 
-    set -U PATH "$HOME/neovim/bin:$PATH"
+    set -gx PATH "$HOME/neovim/bin:$PATH"
     set -gx PATH "/home/linuxbrew/.linuxbrew/bin:$PATH"
+    set -gx PATH "/opt/homebrew/bin:$PATH"
     set -gx PATH "$BUN_INSTALL/bin:$PATH"
     set -gx PATH "~/.cargo/bin:$PATH"
 
