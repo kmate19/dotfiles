@@ -2,7 +2,7 @@
 
 config_dir="${HOME}/.config"
 OS="$(uname)"
-base_pkgs="make cmake ninja gcc fd rg zoxide bat eza fastfetch nodejs go fish lazygit starship"
+base_pkgs="fd rg zoxide bat eza fastfetch nodejs go fish lazygit starship"
 
 function abort() {
   echo "ERROR: $1" >&2
@@ -65,65 +65,10 @@ if [[ "${pkgs}" == "y" ]]; then
             brew install "${pkg}" || 
             abort "failed to install ${pkg}"
         done
-
-        export CC=gcc-14
     else
-        if command -v apt >/dev/null 2>&1; then
-            PKG_MANAGER="apt"
-            PKG_UPDATE="update"
-            PKG_UPGRADE="upgrade"
-            PKG_NOCONFIRM="-y"
-            PKG_INSTALL="install"
-        elif command -v dnf >/dev/null 2>&1; then
-            PKG_MANAGER="dnf"
-            PKG_UPDATE="check-update"
-            PKG_UPGRADE="upgrade"
-            PKG_NOCONFIRM="-y"
-            PKG_INSTALL="install"
-        elif command -v yum >/dev/null 2>&1; then
-            PKG_MANAGER="yum"
-            PKG_UPDATE="check-update"
-            PKG_UPGRADE="update"
-            PKG_NOCONFIRM="-y"
-            PKG_INSTALL="install"
-        elif command -v pacman >/dev/null 2>&1; then
-            PKG_MANAGER="pacman"
-            PKG_UPDATE="-Syy"
-            PKG_UPGRADE="-Syu"
-            PKG_NOCONFIRM="--noconfirm"
-            PKG_INSTALL="-S"
-        elif command -v zypper >/dev/null 2>&1; then
-            PKG_MANAGER="zypper"
-            PKG_UPDATE="refresh"
-            PKG_UPGRADE="update"
-            PKG_NOCONFIRM="-y"
-            PKG_INSTALL="install"
-        elif command -v emerge >/dev/null 2>&1; then
-            PKG_MANAGER="emerge"
-            PKG_UPDATE="--sync"
-            PKG_UPGRADE="-uDU @world"
-            PKG_NOCONFIRM=""  # no global no-confirm option for emerge
-            PKG_INSTALL="" # no separate install cmd for emerge
-        elif command -v apk >/dev/null 2>&1; then
-            PKG_MANAGER="apk"
-            PKG_UPDATE="update"
-            PKG_UPGRADE="upgrade"
-            PKG_NOCONFIRM="--no-confirm"
-            PKG_INSTALL="add"
-        else
-            echo "unknown package manager"
-            exit 1
-        fi
-
-        # update system
-        sudo "${PKG_MANAGER}" "${PKG_UPDATE}" || abort "could not update system"
-        # upgrade
-        sudo "${PKG_MANAGER}" "${PKG_UPGRADE}" "${PKG_NOCONFIRM}" || abort "could not upgrade pkgs"
-        # finally install gcc
-        sudo "${PKG_MANAGER}" "${PKG_INSTALL}" "${PKG_NOCONFIRM}" gcc || abort "could not install pkgs"
-
-        export CC=gcc
+        source ./package-manager.sh "${base_pkgs}" || abort "package manager script failed"
     fi
+    source ./package-manager.sh || abort "package manager script failed"
 fi
 
 echo "do you want rust? y/n"
