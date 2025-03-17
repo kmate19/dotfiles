@@ -2,7 +2,7 @@
 
 config_dir="${HOME}/.config"
 OS="$(uname)"
-base_pkgs="make cmake ninja gcc clang fd rg zoxide bat eza fastfetch nodejs go fish lazygit starship"
+base_pkgs="make cmake ninja gcc fd rg zoxide bat eza fastfetch nodejs go fish lazygit starship"
 
 function abort() {
   echo "ERROR: $1" >&2
@@ -65,7 +65,9 @@ if [[ "${pkgs}" == "y" ]]; then
             brew install "${pkg}" || 
             abort "failed to install ${pkg}"
         done
-    fi
+
+        export CC=gcc-14
+    else
         if command -v apt >/dev/null 2>&1; then
             PKG_MANAGER="apt"
             PKG_UPDATE="update"
@@ -111,6 +113,7 @@ if [[ "${pkgs}" == "y" ]]; then
         else
             echo "unknown package manager"
             exit 1
+        fi
 
         # update system
         sudo "${PKG_MANAGER}" "${PKG_UPDATE}" || abort "could not update system"
@@ -118,6 +121,9 @@ if [[ "${pkgs}" == "y" ]]; then
         sudo "${PKG_MANAGER}" "${PKG_UPGRADE}" "${PKG_NOCONFIRM}" || abort "could not upgrade pkgs"
         # finally install gcc
         sudo "${PKG_MANAGER}" "${PKG_INSTALL}" "${PKG_NOCONFIRM}" gcc || abort "could not install pkgs"
+
+        export CC=gcc
+    fi
 fi
 
 echo "do you want rust? y/n"
@@ -131,11 +137,7 @@ echo "install neovim master? y/n"
 read neovim
 
 if [[ "${neovim}" == "y" ]]; then
-    output=$(source ./neovim-master.sh 2>&1) || {
-      echo "Neovim installation failed with output:"
-      echo "$output"
-      abort "nvim install failed"
-    }
+    source ./neovim-master.sh || abort "nvim install failed"
 fi
 
 echo "set default shell to fish? y/n"
@@ -158,6 +160,10 @@ fi
 
 if [ ! -d "${config_dir}/nvim" ]; then
     git clone https://github.com/kmate19/nvim "${config_dir}/nvim" || abort "failed to clone repo nvim"
+fi
+
+if [ -d "${HOME}/dotfiles" ]; then
+    mv "${HOME}/dotfiles" "${config_dir}"
 fi
 
 # symlinks

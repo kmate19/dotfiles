@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 curr_dir="$(pwd)"
 
@@ -9,6 +9,14 @@ function abort() {
 
 if ! command -v make >/dev/null 2>&1; then
     abort "no make"
+fi
+
+if ! command -v git >/dev/null 2>&1; then
+    abort "no git"
+fi
+
+if [-n $CC ]; then
+    abort "no cc not set"
 fi
 
 # clone the neovim repo
