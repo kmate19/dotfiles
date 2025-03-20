@@ -18,6 +18,8 @@ if status is-interactive
     set -U fish_history_max 1000
     set -U fish_color_ls $LS_COLORS
     set -U fish_cursor_default block
+    set -U repeat_delay = 170 # delay in ms
+    set -U repeat_rate = 45 # repeat_rate in repeats per second
 
     alias cd=z
     alias g=git
