@@ -32,6 +32,8 @@ if status is-interactive
     alias yabaidog="rm -rf /tmp/yabai* & yabai --restart-service"
     alias v=nvim
     alias vimconf="nvim ~/.config/nvim/"
+    alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "$(read)"'
+
 
     # Zoxide initialization
     zoxide init fish | source
