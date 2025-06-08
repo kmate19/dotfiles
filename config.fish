@@ -8,11 +8,18 @@ if status is-interactive
 
     set -U XDG_CONFIG_HOME $HOME/.config/
     set -U BUN_INSTALL "$HOME/.bun"
+
+    set -gx PATH "$HOME/neovim/bin:$PATH"
+    set -gx PATH "/home/linuxbrew/.linuxbrew/bin:$PATH"
+    set -gx PATH "/opt/homebrew/bin:$PATH"
     set -gx PATH "$BUN_INSTALL/bin:$PATH"
     set -gx PATH "~/.cargo/bin:$PATH"
+
     set -U fish_history_max 1000
     set -U fish_color_ls $LS_COLORS
     set -U fish_cursor_default block
+    set -U repeat_delay = 170 # delay in ms
+    set -U repeat_rate = 45 # repeat_rate in repeats per second
 
     alias cd=z
     alias g=git
@@ -25,6 +32,8 @@ if status is-interactive
     alias yabaidog="rm -rf /tmp/yabai* & yabai --restart-service"
     alias v=nvim
     alias vimconf="nvim ~/.config/nvim/"
+    alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "$(read)"'
+
 
     # Zoxide initialization
     zoxide init fish | source
