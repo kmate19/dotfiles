@@ -1,4 +1,5 @@
 *.api
+.DS_Store
 *.log
 *.tmp
 .thumbs
