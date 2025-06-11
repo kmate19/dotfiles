@@ -31,6 +31,7 @@ if status is-interactive
     alias nvim_invalidate="rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.local/state/nvim/lazy"
     alias yabaidog="rm -rf /tmp/yabai* & yabai --restart-service"
     alias v=nvim
+    alias v.="nvim ."
     alias vimconf="nvim ~/.config/nvim/"
     alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "$(read)"'
 
@@ -41,3 +42,6 @@ if status is-interactive
     # Starship prompt initialization
     starship init fish | source
 end
+
+# Added by Windsurf
+fish_add_path /Users/matekiss/.codeium/windsurf/bin

@@ -1,7 +1,10 @@
 font-size = 16
 font-feature = -calt
 font-feature = -liga
-font-feature = -dlig
+font-feature = -dli
+font-family = Iosevka
+# background-opacity = 0.7
+# background-blur-radius = 40
 
 theme = SoftServer
 background = #141515
