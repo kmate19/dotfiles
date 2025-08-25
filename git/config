@@ -1,0 +1,69 @@
+[user]
+	name = kmate19
+    email = 99414737+kmate19@users.noreply.github.com
+
+[color]
+	ui = true
+
+[core]
+    compression = 9
+    whitespace = error
+    preloadindex = true
+
+[status]
+    branch = true
+    showStash = true
+    showUntrackedFiles = all
+
+[diff]
+    context = 3
+    renames = copies
+    interHunkContext = 10
+
+[interactive]
+    singlekey = true
+
+[commit]
+    verbose = true
+    gpgSign = true
+
+[tag]
+    gpgSign = true
+
+[push]
+    autoSetupRemote = true
+    default = current
+    followTags = true
+
+[pull]
+    default = current
+    rebase = true
+
+[rebase]
+    autoStash = true
+    missingCommitsCheck = error
+
+[log]
+    abbrevCommit = true
+
+[color "diff"]
+    meta = black bold
+    frag = magenta
+    context = white
+    whitespace = yellow reverse
+    old = red
+
+[url "git@github.com:kmate19/"]
+    insteadOf = "self:"
+
+[url "https://github.com/kmate19/"]
+    insteadOf = "hself:"
+
+[url "git@github.com:"]
+    insteadOf = "gh:"
+
+[url "git@github.com:"]
+    insteadOf = "hgh:"
+
+[url "git@gitlab.com:"]
+    insteadOf = "gh:"

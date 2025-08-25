@@ -34,6 +34,16 @@ if status is-interactive
     alias v.="nvim ."
     alias vimconf="nvim ~/.config/nvim/"
     alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "$(read)"'
+    alias gc='git commit'
+    alias gcl='git clone'
+    alias gs='git status'
+    alias gp='git push'
+    alias gb='git branch'
+    alias gl="git log --all --graph --pretty=format:'%C(magenta)%h %C(white) %an %ar%C(auto) %D%n%s%n'"
+    alias gu='git push'
+    alias gd='git diff'
+    alias gf='git fetch'
+    alias ga='git add'
 
 
     # Zoxide initialization
