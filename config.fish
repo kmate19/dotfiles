@@ -40,7 +40,7 @@ if status is-interactive
     alias gp='git push'
     alias gb='git branch'
     alias gl="git log --all --graph --pretty=format:'%C(magenta)%h %C(white) %an %ar%C(auto) %D%n%s%n'"
-    alias gu='git push'
+    alias gu='git pull'
     alias gd='git diff'
     alias gf='git fetch'
     alias ga='git add'
