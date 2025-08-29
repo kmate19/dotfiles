@@ -54,17 +54,20 @@
     whitespace = yellow reverse
     old = red
 
-[url "git@github.com:kmate19/"]
+[url "https://github.com/kmate19/"]
     insteadOf = "self:"
 
-[url "https://github.com/kmate19/"]
-    insteadOf = "hself:"
-
-[url "git@github.com:"]
+[url "https://github.com/"]
     insteadOf = "gh:"
 
+[url "https://gitlab.com/"]
+    insteadOf = "gl:"
+
+[url "git@github.com:kmate19/"]
+    insteadOf = "selfssh:"
+
 [url "git@github.com:"]
-    insteadOf = "hgh:"
+    insteadOf = "ghssh:"
 
 [url "git@gitlab.com:"]
-    insteadOf = "gl:"
+    insteadOf = "glssh:"
