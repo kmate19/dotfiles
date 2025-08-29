@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 if wezterm.target_triple:find("windows") ~= nil then
-	config.default_prog = {"pwsh.exe"}
+	config.default_prog = { "pwsh.exe" }
 	config.font_size = 12
 elseif wezterm.target_triple:find("darwin") then
 	config.font_size = 16
@@ -15,7 +15,7 @@ config.font = wezterm.font("Iosevka")
 config.enable_kitty_graphics = true
 config.max_fps = 120
 config.animation_fps = 120
-config.color_scheme = "Hardcore (Gogh)"
+config.color_scheme = "Gruvbox dark, medium (base16)"
 config.audible_bell = "Disabled"
 
 return config
