@@ -14,6 +14,7 @@ if status is-interactive
     set -gx PATH "/opt/homebrew/bin:$PATH"
     set -gx PATH "$BUN_INSTALL/bin:$PATH"
     set -gx PATH "~/.cargo/bin:$PATH"
+    set -gx GPG_TTY "$(tty)"
 
     set -U fish_history_max 1000
     set -U fish_color_ls $LS_COLORS
