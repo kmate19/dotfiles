@@ -14,6 +14,16 @@ function c { code @args }
 function pn { pnpm @args }
 function g { git @args }
 function l { eza -lah --icons @args }
+function cr { cargo run @args }
+function ln { New-Item -ItemType HardLink -Path $args[1] -Target $args[0] }
+function glazeconf { 
+    $path = [System.Environment]::ExpandEnvironmentVariables("%userprofile%")+"\.glzr\glazewm\config.yaml";
+    nvim $path;
+}
+
+function hello {
+    echo "hello!"
+}
 
 Remove-Item Alias:cd -Force
 Remove-Item Alias:cat -Force
@@ -24,6 +34,9 @@ function cat { bat @args }
 function gc { git commit @args }
 function ls { eza --icons @args }
 function cd { z @args }
+
+Import-Module "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Microsoft.VisualStudio.DevShell.dll"
+function vsdev { Enter-VsDevShell -VsInstallPath "C:\Program Files\Microsoft Visual Studio\2022\Community" -Arch amd64 }
 
 Invoke-Expression (&starship init powershell)
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
