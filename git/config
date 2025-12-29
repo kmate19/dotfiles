@@ -26,10 +26,10 @@
 
 [commit]
     verbose = true
-    gpgSign = true
+    ; gpgSign = true
 
 [tag]
-    gpgSign = true
+    ; gpgSign = true
 
 [push]
     autoSetupRemote = true

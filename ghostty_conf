@@ -1,10 +1,10 @@
-font-size = 17
+font-size = 15
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
-font-family = Iosevka
+font-family = Jetbrains Mono NL
 # background-opacity = 0.7
 # background-blur-radius = 40
+click-repeat-interval = 250
 
-theme = 0x96f
 keybind = shift+enter=text:\n

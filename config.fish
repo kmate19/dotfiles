@@ -44,6 +44,7 @@ if status is-interactive
     alias gu='git pull'
     alias gd='git diff'
     alias gf='git fetch'
+    alias cr='cargo run'
     alias ga='git add'
 
 
@@ -51,7 +52,7 @@ if status is-interactive
     zoxide init fish | source
 
     # Starship prompt initialization
-    starship init fish | source
+    # starship init fish | source
 end
 
 # Added by Windsurf
