@@ -1,0 +1,79 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "edit_predictions": {
+    "provider": "copilot"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "procMacro": {
+          "enable": true,
+        },
+        "buildScripts": {
+          "enable": true,
+        },
+      },
+    },
+  },
+  // "auto_signature_help": true,
+  "agent_servers": {},
+  "agent": {
+    "dock": "right",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5",
+    },
+    "model_parameters": [],
+  },
+  "toolbar": {
+    "code_actions": true,
+  },
+  "relative_line_numbers": "enabled",
+  "vertical_scroll_margin": 8.0,
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "diagnostics": {
+    "inline": {
+      "enabled": false,
+      "max_severity": "off",
+    },
+  },
+  "diagnostics_max_severity": "all",
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_line_height": "standard",
+  "buffer_font_features": {
+    "calt": false,
+  },
+  "base_keymap": "VSCode",
+  "icon_theme": "Zed (Default)",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "dark",
+    "light": "Catppuccin Latte",
+    "dark": "Tokyo Night",
+  },
+}
